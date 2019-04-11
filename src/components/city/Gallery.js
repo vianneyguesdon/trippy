@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Global from '../../Global';
 import LargeCard from './LargeCard';
 import Card from './Card';
@@ -19,25 +19,34 @@ class Gallery extends React.Component {
       cities
     } = this.props
 
-    console.log("cities GALLERY", cities)
-    console.log("paris ??? GALLERY", cities[0])
+    // console.log("cities GALLERY", cities)
+    // console.log("paris ??? GALLERY", cities[0])
 
     return (
-      <Container className="row">
-        <div className="col-md-12">
-          <h2>Explore the World with Trippy ! <i className="fas fa-pills"></i></h2>
-        </div>
-        <div>
-          <LargeCard name={cities[4].name} source={cities[4].source} slug={cities[4].slug}/>
-          <div>
-            {}
-            <Card name={cities[0].name} source={cities[0].source} slug={cities[0].slug}/>
-            <Card name={cities[1].name} source={cities[1].source} slug={cities[1].slug}/>
-            <Card name={cities[2].name} source={cities[2].source} slug={cities[2].slug}/>
-            <Card name={cities[3].name} source={cities[3].source} slug={cities[3].slug}/>
+      <div className="container">
+        <Container className="row">
+          <div className="col-12">
+            <h2>Explore the World with Trippy !</h2>
           </div>
-        </div>
-      </Container>
+          <div className="col-12 col-md-6">
+            <LargeCard name={cities[0].name} source={cities[0].source} slug={cities[0].slug}/>
+          </div>
+          <div className="col-12 col-md-6">
+            <div className="row">
+              {cities.slice(1).map((city, index) => {
+                return(
+                  <Card 
+                    key={index}
+                    name = {city.name}
+                    slug = {city.slug}
+                    source = {city.source}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </Container>
+      </div>
     );
   }
 }

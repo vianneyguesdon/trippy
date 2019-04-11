@@ -1,7 +1,7 @@
 import React from 'react';
 import Config from '../../Config';
-import styled, { css } from 'styled-components';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import styled from 'styled-components';
+import {BrowserRouter as Link} from "react-router-dom";
 
 const Container = styled.div`
   
@@ -9,7 +9,7 @@ const Container = styled.div`
 
 class LargeCard extends React.Component {
   render() {
-    console.log("this.props CARD", this.props)
+    // console.log("this.props CARD", this.props)
 
     const {
       name,
@@ -18,10 +18,10 @@ class LargeCard extends React.Component {
     } = this.props
 
     return (
-      <Container className="col-md-6 col-12">
+      <Container>
         <Link to={`/hotels?city=${slug}`}>
           <div>
-            <img src={`${Config.host}${source}`} alt={name}/>
+            <img className="img-fluid" src={`${Config.host}${source}`} alt={name}/>
             <h5>{name}</h5>
           </div>
         </Link>

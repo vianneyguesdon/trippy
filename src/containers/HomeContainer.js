@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from '../components/core/Home';
 import Api from '../utils/Api';
-import Gallery from '../components/city/Gallery';
 
 class HomeContainer extends React.Component {
 
@@ -18,7 +17,7 @@ class HomeContainer extends React.Component {
         this.setState({
           cities
         })
-        console.log(">> #componentDidMount cities:", cities)
+        // console.log(">> #componentDidMount cities:", cities)
       })
   }
 
@@ -27,8 +26,8 @@ class HomeContainer extends React.Component {
     if(this.state.cities.length === 0)
       return "error. I'm waiting for the data"
     return (
-      <div>
-        <Gallery cities={this.state.cities}/>
+      <div style={{height: 3000}}>
+        <Home cities={this.state.cities}/>
       </div>
     );
   }

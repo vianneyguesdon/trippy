@@ -15,7 +15,7 @@ const Global = {
     "body": 16,
     "caption": 14,
     "header": 22,
-    "navbar": 50
+    "navbar": "60px",
   },
 
   weight : {

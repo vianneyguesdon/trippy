@@ -5,10 +5,10 @@ class Api {
     return fetch(`${Config.host}/api/home`)
       .then(res => res.json())
       .then(data => {
-        console.log("Api.js data:",data);
+        // console.log("Api.js data:",data);
         if (data.success === true) {
-          console.log("success!!");
-          console.log("data.cities", data.cities)
+          // console.log("success!!");
+          // console.log("data.cities", data.cities)
           return data.cities;
         }
         return "error loading the data"
